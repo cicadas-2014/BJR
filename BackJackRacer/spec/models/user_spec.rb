@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'User' do
+describe 'Users' do
   let(:user){ User.new(name:'Jess',email: 'j@j.com')}
   let(:user2){ User.new(name:'Judy',email: 'j@j.com')}
 
@@ -17,10 +17,5 @@ describe 'User' do
       user.should_not be_valid
     end
 
-    context 'is valid' do
-    it 'when name is not given' do
-      user.should be_valid  
-    end
-  end
   end
 end

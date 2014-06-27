@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  
-get '/', to: 'users#index'
+ 
+ root :to => 'users#index'
+
+get '/', to: 'users#index', as: 'index'
 
 post '/', to: 'users#new', as: 'new'
 
