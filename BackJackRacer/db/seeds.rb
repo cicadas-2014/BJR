@@ -1,5 +1,6 @@
 User.create( username: "admin",
-             password: "admin" )
+             password: "admin",
+             funds: 9000 )
 
 8.times do |n|
   Racer.create( max_steps: n+1,
