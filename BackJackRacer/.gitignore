@@ -15,7 +15,10 @@
 /log/*.log
 /tmp
 
-#ignore IDEA project files
+# Ignore IDEA project files
 
 *.idea
 *.iml
+
+# Ignore Mac files
+.DS_Store

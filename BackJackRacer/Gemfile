@@ -40,3 +40,9 @@ gem 'travis-lint'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pg'
+gem 'bcrypt'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
