@@ -1,0 +1,6 @@
+<p>This is the new round path</p>
+
+<%= form_tag(rounds_path, method: "post") do %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Start round") %>
+<% end %>
