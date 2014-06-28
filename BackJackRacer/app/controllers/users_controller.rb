@@ -4,10 +4,12 @@ class UsersController < ApplicationController
     
   end
 
-  def new
+  def create
     user_params = params[:user]
-    @user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password])
-    if @user.save
+    
+    user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password])
+    if user.save
+      session[:user_id] = user.id
       redirect_to new_round_path
     else
       p "Failure to sign up"
@@ -16,9 +18,9 @@ class UsersController < ApplicationController
   end
 
   def signin
-    @user = User.find(email: params[:email])
-    p params
-    if @user.authenticate(params[:password])
+    user = User.find(email: params[:email])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect_to new_round_path
     else
       p "Failure to log in"
