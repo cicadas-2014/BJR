@@ -17,13 +17,12 @@ class UsersController < ApplicationController
   end
 
   def signin
-    user = User.find(username: params[:username])
+    @user = User.find(username: params[:username])
     if user.authenticate(params[:password])
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
 
       redirect_to new_round_path
     else
-      p "Failure to log in"
       render :index
     end
   end

@@ -4,15 +4,17 @@
 
 <div class='user_stuff'>
   <div id='signin'>
-    <%= form_tag  url: signin_path do |f| %>
-    <%= f.label "Username" %>
-    <%= f.text_field :username, id: "signin_username"  %>
-    <%= f.label "Password" %>
-    <%= f.password_field :password, id: "signin_password" %>
-    <%= f.submit "Sign In" %>
+    <h3>Login</h3>
+    <%= form_tag(signin_path, method: "post") do %>
+      <%= label_tag(:username, "Username") %>
+      <%= text_field_tag(:username) %>
+      <%= label_tag(:password, "Password") %>
+      <%= text_field_tag(:password) %>
+      <%= submit_tag("Login") %>
     <% end %>
   </div>
   <div id='signup'>
+    <h3>Sign Up</h3>
     <%= form_for User.new, url: new_path do |f| %>
     <%= f.label "Username" %>
     <%= f.text_field :username, id: "signup_username" %>
