@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    
+
   end
 
   def create
     user_params = params[:user]
-    
-    user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password])
+    user = User.new(name: user_params[:name], username: user_params[:username], password: user_params[:password])
     if user.save
       session[:user_id] = user.id
       redirect_to new_round_path
@@ -18,9 +17,10 @@ class UsersController < ApplicationController
   end
 
   def signin
-    user = User.find(email: params[:email])
+    user = User.find(username: params[:username])
     if user.authenticate(params[:password])
       session[:user_id] = user.id
+
       redirect_to new_round_path
     else
       p "Failure to log in"
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :password)
   end
 
 end
