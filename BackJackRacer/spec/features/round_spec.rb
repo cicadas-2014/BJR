@@ -1,9 +1,7 @@
 require 'spec_helper'
-require 'pry'
 describe 'Rounds' do 
   # include Rspec::Rails::ControllerExampleGroup
   describe 'Start round' do
-    let!(:user){create(:logged_in_user)}
     it 'successfully start the game' do
       #post signin_path, controller: "users", user: {username: 'username@username.com', password: 'password'}
       ######### find a way to do this!! ###########
