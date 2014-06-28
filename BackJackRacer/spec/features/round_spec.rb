@@ -1,6 +1,5 @@
 require 'spec_helper'
 describe 'Rounds' do 
-  # include Rspec::Rails::ControllerExampleGroup
   describe 'Start round' do
     it 'successfully start the game' do
       #post signin_path, controller: "users", user: {username: 'username@username.com', password: 'password'}
@@ -11,8 +10,8 @@ describe 'Rounds' do
       click_button "Sign Up"
       ############################################
       visit new_round_path
-      # click_button "Start round"
-      # expect(current_path).to eq(round_path)
+      click_button "Start round"
+      expect(page).to have_content('round')
     end
   end
 end
