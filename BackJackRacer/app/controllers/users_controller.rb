@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    
+
   end
 
   def new
     user_params = params[:user]
-    @user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password])
+    @user = User.new(username: user_params[:username], password: user_params[:password])
     if @user.save
       redirect_to new_round_path
     else
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def signin
-    @user = User.find(email: params[:email])
+    @user = User.find(username: params[:username])
     p params
     if @user.authenticate(params[:password])
       redirect_to new_round_path
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :password)
   end
 
 end
