@@ -1,4 +1,4 @@
-User.create( username: "admin",
+User.create( name: "admin",
              password: "admin",
              funds: 9000 )
 
