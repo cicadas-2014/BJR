@@ -18,5 +18,10 @@ describe 'Users' do
   		visit user_path(id: user.id)
   		expect(page).to have_content(user.username)
   	end
+
+  	it 'displays funds for the user' do
+  		visit user_path(id: user.id)
+  		expect(page).to have_content(user.funds)
+  	end
   end
 end
