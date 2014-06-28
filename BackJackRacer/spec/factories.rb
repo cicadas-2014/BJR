@@ -1,8 +1,18 @@
 FactoryGirl.define do
   factory :user do
-    password = Faker::Internet.password
     username { Faker::Internet.user_name }
-    password { password }
-    password_confirmation { password }
+    password { Faker::Internet.password }
   end
+
+  factory :round do
+    user
+  end
+
+  factory :racer do
+    round
+    max_steps { rand(1..10) }
+    odds { rand(1..10) }
+    bet { rand(100..10000) }
+  end
+
 end
