@@ -10,4 +10,6 @@ post '/', to: 'users#signin', as: 'signin'
 
 resources :rounds, only: [:new, :create, :show]
 
+resources :users, only: [:show]
+
 end
