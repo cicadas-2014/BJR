@@ -6,11 +6,11 @@ describe 'Users' do
     let!(:user){create(:user)}
     it 'successfully create new user' do
       visit index_path
-      fill_in "Name", with: user.name
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
+      fill_in "signup_name", with: user.name
+      fill_in "signup_email", with: user.email
+      fill_in "signup_password", with: user.password
       click_button "Sign Up"
-      expect(current_path).to eq(new_rounds_path)
+      expect(current_path).to eq(new_round_path)
     end
   end
 end

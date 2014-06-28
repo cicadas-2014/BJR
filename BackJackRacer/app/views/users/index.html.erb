@@ -1,26 +1,26 @@
 <header>
-<h1>Back Jack Racer</h1>
+    <h1>Back Jack Racer</h1>
 </header>
 
 <div class='user_stuff'>
-<div id='signin'>
-<%=form_for signin_path do |f| %>
-  <%=f.label "Email"%>
-  <%=f.text_field :email %>
-  <%=f.label "Password"%>
-  <%=f.password_field :password %>
-  <%=f.submit "Sign In"%>
-<%end%>
-</div>
-<div id='signup'>
-<%=form_for new_path do |f| %>
-  <%=f.label "Name"%>
-  <%=f.text_field "Name" %>
-  <%=f.label "Email"%>
-  <%=f.text_field "Email" %>
-  <%=f.label "Password"%>
-  <%=f.password_field "Password" %>
-  <%=f.submit "Sign Up"%>
-<%end%>
-</div>
+    <div id='signin'>
+        <%= form_for User.new, url: signin_path do |f| %>
+            <%= f.label "Email" %>
+            <%= f.text_field :email %>
+            <%= f.label "Password" %>
+            <%= f.password_field :password %>
+            <%= f.submit "Sign In" %>
+        <% end %>
+    </div>
+    <div id='signup'>
+        <%= form_for User.new, url: new_path do |f| %>
+            <%= f.label "Name" %>
+            <%= f.text_field :name, id: "signup_name" %>
+            <%= f.label "Email" %>
+            <%= f.text_field :email, id: "signup_email" %>
+            <%= f.label "Password" %>
+            <%= f.password_field :password, id: "signup_password"%>
+            <%= f.submit "Sign Up" %>
+        <% end %>
+    </div>
 </div>
