@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  after_initialize :init
   has_many :rounds
 
   validates_presence_of :username
@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  def init
+    self.funds = 1000
+  end
 end
