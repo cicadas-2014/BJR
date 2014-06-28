@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new(name: params[:name], email: params[:email], password: params[:password])
+    user_params = params[:user]
+    @user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password])
     if @user.save
       redirect_to new_round_path
     else
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
 
   def signin
     @user = User.find(email: params[:email])
+    p params
     if @user.authenticate(params[:password])
       redirect_to new_round_path
     else

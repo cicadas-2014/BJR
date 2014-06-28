@@ -5,8 +5,9 @@ describe 'Users' do
   describe 'signup' do
     let!(:user){create(:user)}
     it 'successfully create new user' do
+      p "Hello! ---------------------------------------- #{user.authenticate(user.password)}"
       visit index_path
-      fill_in "Name", with: user.name
+      fill_in :name, with: user.name
       fill_in "Email", with: user.email
       fill_in "Password", with: user.password
       click_button "Sign Up"
