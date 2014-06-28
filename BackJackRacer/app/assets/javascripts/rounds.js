@@ -21,13 +21,11 @@ $(document).ready(function() {
 			bet += parseInt($('#bet_4').val())
 		}
 		if(parseInt($('#balance').text()) < bet){
-		$('#error').text("You cant bet that much :(")
+		$('#bet_error').text("You cant bet that much :(")
 			$('input[name="commit"]').attr("disabled", true);
 		}else{
-			$('#error').text("")
+			$('#bet_error').text("")
 			$('input[name="commit"]').attr("disabled", false);
-
 		}
-
 	});
 });
