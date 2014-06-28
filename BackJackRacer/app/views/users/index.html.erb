@@ -5,6 +5,9 @@
 <div class='user_stuff'>
   <div id='signin'>
     <h3>Login</h3>
+    <% if @errors %>
+      <p class="error"><%= @error %></p>
+    <% end %>
     <%= form_tag(signin_path, method: "post") do %>
       <%= label_tag(:username, "Username") %>
       <%= text_field_tag(:username) %>

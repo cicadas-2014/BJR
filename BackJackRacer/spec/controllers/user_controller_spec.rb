@@ -16,31 +16,31 @@ describe UsersController do
      end
 
      it "redirects to new round page" do
-      expect(
-        post :create, user: {username: "asdf", password: "asdf"}
-        ).to redirect_to new_round_path
+      post :create, user: {username: "asdf", password: "asdf"}
+      expect(response).to redirect_to new_round_path
     end
   end
 
   describe 'post #signin' do
-    let(:user) { User.create( username: "asdf", password: "asdf") }
+    let!(:user) { User.create( username: "asdf", password: "asdf") }
 
     context "valid login" do
-      it "redirects to the new round page"
-      expect(
-        post :signin, user: {username: "asdf", password: "asdf"}
-        ).to redirect_to new_round_path
-    end
+      it "redirects to the new round page" do
+        post :signin, username: "asdf", password: "asdf"
+        expect(response).to redirect_to new_round_path
+      end
     end
 
     context "invalid login" do
       it "sets @errors" do
+        post :signin, username: "aw4t", password: "aw3yh"
+        expect(assigns(:error)).to_not be_nil
       end
       it "renders the index" do
-      expect(
-        post :create, user: {username: "aw4t", password: "aw3yh"}
-        ).to render :index
-    end
+        expect(
+          post :signin, username: "aw4t", password: "aw3yh"
+          ).to render_template :index
+      end
     end
   end
 end

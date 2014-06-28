@@ -11,24 +11,21 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to new_round_path
     else
-      p "Failure to sign up"
       render :index
     end
   end
 
   def signin
-    @user = User.find(username: params[:username])
-    if user.authenticate(params[:password])
-      session[:user_id] = @user.id
-
-      redirect_to new_round_path
+    @user = User.find_by(username: params[:username])
+    if @user
+      if @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        redirect_to new_round_path
+      end
     else
+      @error = "Invalid login"
       render :index
     end
-  end
-
-  def show
-    @user = User.find(params[:id])  
   end
 
   private
