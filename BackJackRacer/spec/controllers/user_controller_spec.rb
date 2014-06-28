@@ -23,10 +23,24 @@ describe UsersController do
   end
 
   describe 'post #signin' do
-    context "" do
+    let(:user) { User.create( username: "asdf", password: "asdf") }
+
+    context "valid login" do
+      it "redirects to the new round page"
+      expect(
+        post :signin, user: {username: "asdf", password: "asdf"}
+        ).to redirect_to new_round_path
+    end
     end
 
-    context "" do
+    context "invalid login" do
+      it "sets @errors" do
+      end
+      it "renders the index" do
+      expect(
+        post :create, user: {username: "aw4t", password: "aw3yh"}
+        ).to render :index
+    end
     end
   end
 end
