@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe 'Users' do
-
-  describe 'signup' do
+describe 'UsersController' do
+  let(:user) { create :user }
+  describe '#create' do
     it 'successfully create new user' do
       visit index_path
       fill_in "signup_username", with: 'username'
@@ -11,4 +11,11 @@ describe 'Users' do
       expect(current_path).to eq(new_round_path)
     end
   end
+
+  describe '#signin' do
+
+    it 'sets an existing user to @user'
+    it
+  end
+
 end

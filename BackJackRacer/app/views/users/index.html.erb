@@ -4,7 +4,7 @@
 
 <div class='user_stuff'>
   <div id='signin'>
-    <%= form_for User.new, url: signin_path do |f| %>
+    <%= form_tag  url: signin_path do |f| %>
     <%= f.label "Username" %>
     <%= f.text_field :username, id: "signin_username"  %>
     <%= f.label "Password" %>
