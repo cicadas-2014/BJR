@@ -48,7 +48,6 @@ pkg
 tmp
 capybara*.html
 .rvmrc
-/coverage/*
 
 ## PROJECT::SPECIFIC
 

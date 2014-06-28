@@ -1,5 +1,5 @@
 class RoundsController < ApplicationController
-
+	include ApplicationHelper
 
 	def new
 
@@ -7,7 +7,7 @@ class RoundsController < ApplicationController
 
 	def create
 		round = Round.create(user:current_user)
-		rediret_to round_path(round)
+		redirect_to round_path(round)
 	end
 
 	def show
