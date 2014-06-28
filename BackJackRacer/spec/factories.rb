@@ -14,5 +14,4 @@ FactoryGirl.define do
     odds { rand(1..10) }
     bet { rand(100..10000) }
   end
-
 end
