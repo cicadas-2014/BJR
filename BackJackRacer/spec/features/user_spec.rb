@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'Users' do 
 
   describe 'signup' do
-    let!(:user){User.create(name: "Sam", email: "sam@sam.com", password: "coffee")}
+    let!(:user){create(:user)}
     it 'successfully create new user' do
       visit index_path
       fill_in "Name", with: user.name

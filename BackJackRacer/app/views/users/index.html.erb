@@ -15,11 +15,11 @@
 <div id='signup'>
 <%=form_for new_path do |f| %>
   <%=f.label "Name"%>
-  <%=f.text_field :name %>
+  <%=f.text_field "Name" %>
   <%=f.label "Email"%>
-  <%=f.text_field :email %>
+  <%=f.text_field "Email" %>
   <%=f.label "Password"%>
-  <%=f.password_field :password %>
+  <%=f.password_field "Password" %>
   <%=f.submit "Sign Up"%>
 <%end%>
 </div>
