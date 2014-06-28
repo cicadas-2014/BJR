@@ -8,8 +8,7 @@ FactoryGirl.define do
 
   factory :logged_in_user, class: User do
     password = 'password'
-    name { Faker::Name.name }
-    email { 'email@email.com' }
+    username { 'username@username.com' }
     password { password }
     password_confirmation { password }
   end

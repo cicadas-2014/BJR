@@ -5,7 +5,6 @@ describe 'Users' do
   describe 'signup' do
     it 'successfully create new user' do
       visit index_path
-      fill_in "signup_name", with: 'Kevin Zhou'
       fill_in "signup_username", with: 'username'
       fill_in "signup_password", with: 'password!!!'
       click_button "Sign Up"

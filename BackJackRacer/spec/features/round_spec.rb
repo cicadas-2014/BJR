@@ -8,7 +8,6 @@ describe 'Rounds' do
       #post signin_path, controller: "users", user: {username: 'username@username.com', password: 'password'}
       ######### find a way to do this!! ###########
       visit index_path
-      fill_in "signup_name", with: 'Kevin Zhou'
       fill_in "signup_username", with: 'username'
       fill_in "signup_password", with: 'password!!!'
       click_button "Sign Up"
