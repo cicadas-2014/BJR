@@ -5,8 +5,8 @@
 <div class='user_stuff'>
     <div id='signin'>
         <%= form_for User.new, url: signin_path do |f| %>
-            <%= f.label "Email" %>
-            <%= f.text_field :email %>
+            <%= f.label "Username" %>
+            <%= f.text_field :username %>
             <%= f.label "Password" %>
             <%= f.password_field :password %>
             <%= f.submit "Sign In" %>
@@ -14,10 +14,8 @@
     </div>
     <div id='signup'>
         <%= form_for User.new, url: new_path do |f| %>
-            <%= f.label "Name" %>
+            <%= f.label "Username" %>
             <%= f.text_field :name, id: "signup_name" %>
-            <%= f.label "Email" %>
-            <%= f.text_field :email, id: "signup_email" %>
             <%= f.label "Password" %>
             <%= f.password_field :password, id: "signup_password"%>
             <%= f.submit "Sign Up" %>
