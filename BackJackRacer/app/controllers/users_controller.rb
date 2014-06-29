@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @error = ""
     redirect_to new_round_path if session[:user_id]
   end
 

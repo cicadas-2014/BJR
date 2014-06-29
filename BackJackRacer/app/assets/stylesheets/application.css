@@ -5,14 +5,46 @@ body {
   margin-top: 5%;
 }
 
-
-header {
+#user_login header {
   background-color: black;
   height: 15%;
   display: fixed;
   top: 20px;
 }
 
+
+
+#user_login #logout {
+ color: white;
+ float: right;
+ text-decoration: none;
+ margin-top: 25px;
+}
+
+#user_login {
+  border: 2px black solid;
+  width: 350px;
+  margin: 150px auto;
+  background-color: white;
+}
+
+#user_login  div {
+  display: inline-block;
+  width: 43%;
+  margin: 10px;
+  height: 209px;
+}
+#user_login .error {
+  margin: 0;
+  padding: 0;
+}
+#user_login  div:first-child {
+  border-right: 2px black solid;
+}
+
+.error {
+  color: red;
+}
 nav {
   background-color: black;
   position :fixed;
@@ -20,49 +52,8 @@ nav {
   left: 0;
   width: 100%;
 }
-
 nav h1 {
   color: white;
   display: inline-block;
   width: 20%;
-}
-
-#logout {
- color: white;
- float: right;
- text-decoration: none;
- margin-top: 25px;
-}
-
-.user_stuff {
-  border: 2px black solid;
-  width: 350px;
-  height: 220px;
-  position: absolute;
-  top: 40%;
-  left: 27%;
-  background-color: white;
-}
-
-.user_stuff div {
-  display: inline-block;
-}
-
-#signup {
-  width: 43%;
-  float: right;
-  border-right: 2px solid black;
-  height: 75%;
-  margin: 10px;
-}
-
-#signin {
-  width: 43%;
-  float: right;
-  padding: 10px;
-  height: 100%
-}
-
-.error {
-  color: red;
 }
