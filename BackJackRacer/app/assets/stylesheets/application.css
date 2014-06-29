@@ -1,8 +1,8 @@
-
 body {
   background-image: url('/finishline.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 5%;
 }
 
 
@@ -13,15 +13,31 @@ header {
   top: 20px;
 }
 
-header h1 {
+nav {
+  background-color: black;
+  position :fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav h1 {
   color: white;
-  margin: 0px;
+  display: inline-block;
+  width: 20%;
+}
+
+#logout {
+ color: white;
+ float: right;
+ text-decoration: none;
+ margin-top: 25px;
 }
 
 .user_stuff {
   border: 2px black solid;
   width: 350px;
-  height: 200px;
+  height: 220px;
   position: absolute;
   top: 40%;
   left: 27%;
@@ -39,6 +55,7 @@ header h1 {
   height: 75%;
   margin: 10px;
 }
+
 #signin {
   width: 43%;
   float: right;

@@ -1,18 +1,26 @@
 class RoundsController < ApplicationController
-	include ApplicationHelper
+  include ApplicationHelper
 
-	def new
+  def new
 
-	end
+  end
 
-	def create
-		round = Round.create(user:current_user)
-		redirect_to round_path(round)
-	end
+  def create
+    @round = Round.create( user: current_user )
+    @bets = [params[:bet_1], params[:bet_2], params[:bet_3], params[:bet_4]]
+    4.times do |n|
+      Racer.create( odds: rand(1..5),
+                    bet: @bets[n],
+                    round_id: @round.id )
+    end
+    @round.set_winner
+    @round.set_payout
+    render :"rounds/show", :id => @round.id
+  end
 
-	def show
+  def show
 
-	end
+  end
 
 
 end

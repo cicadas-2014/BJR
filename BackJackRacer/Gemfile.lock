@@ -46,7 +46,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    columnize (0.3.6)
     database_cleaner (1.2.0)
+    debugger (1.6.8)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.3.5)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.3.5)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -120,12 +127,6 @@ GEM
       rspec-mocks (~> 2.14.0)
     rubyzip (1.1.4)
     safe_yaml (0.9.7)
-    sass (3.2.19)
-    sass-rails (4.0.3)
-      railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.0)
-      sprockets (~> 2.8, <= 2.11.0)
-      sprockets-rails (~> 2.0)
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
@@ -181,6 +182,7 @@ DEPENDENCIES
   capybara (~> 2.2.1)
   coffee-rails (~> 4.0.0)
   database_cleaner (~> 1.2.0)
+  debugger
   factory_girl_rails
   faker
   jbuilder (~> 2.0)
@@ -189,7 +191,6 @@ DEPENDENCIES
   pry
   rails (= 4.1.1)
   rspec-rails (~> 2.14.1)
-  sass-rails
   sdoc (~> 0.4.0)
   selenium-webdriver (~> 2.38.0)
   shoulda-matchers
