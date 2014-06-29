@@ -2,6 +2,12 @@
 
 <h1>The winner is racer <%= @round.winner.id %>!!!</h1>
 
-<!-- Game view goes here -->
+<%= stylesheet_link_tag("racer") %>
 
-<!-- Button that appears after the game finishes goes here -->
+<div class='maze'>
+    <div class='walker'>&#9654;</div>
+    <div id='svgPath'><%= image_tag("path.svg", size: "800x800")%></div>
+</div>
+
+<%=javascript_include_tag "racerAnimator.js" %>
+<%=javascript_include_tag "racer.js" %>
