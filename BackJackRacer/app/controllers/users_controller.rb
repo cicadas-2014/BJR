@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
 
   def index
-    p '*'*100
-    p params
-    p '*'*100
     @error = params[:error]
     redirect_to new_round_path if session[:user_id]
   end
@@ -21,13 +18,10 @@ class UsersController < ApplicationController
 
   def signin
     @user = User.find_by(username: params[:username])
-    if @user
-      if @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-        redirect_to new_round_path
-      end
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to new_round_path
     else
-      @error = "Invalid login"
       redirect_to controller: 'users', action: 'index', error: "Invalid login"
     end
   end

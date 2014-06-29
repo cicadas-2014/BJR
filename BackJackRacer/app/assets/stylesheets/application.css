@@ -6,7 +6,6 @@ body {
 }
 
 .error {
-  color: red;
 }
 nav {
   background-color: black;
@@ -17,7 +16,6 @@ nav {
   height: 70px;
 }
 nav h1 {
-  color: white;
   display: inline-block;
   /*width: %;*/
 }
@@ -26,6 +24,12 @@ nav h1 {
  float: right;
  text-decoration: none;
  margin-top: 25px;
+}
+#back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
 }
 #login_box {
   position: fixed;
@@ -69,3 +73,72 @@ nav h1 {
   margin: 0;
   padding: 0;
 }
+
+
+
+#bet {
+  width: 200px;
+  margin: 0 auto;
+}
+
+#bet input {
+  margin: 7px auto;
+  width: 50%;
+  border:none;
+  float: right;
+}
+
+#bet .red {
+  background-color: red;
+} 
+
+#bet .green {
+  background-color: green;
+} 
+
+#bet .yellow {
+  background-color: yellow;
+} 
+
+#bet .blue {
+  background-color: blue;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

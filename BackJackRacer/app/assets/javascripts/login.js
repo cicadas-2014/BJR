@@ -3,15 +3,7 @@ function showLoginBox(){
 	$("#login_box").slideDown(speed);
 	setTimeout(function(){$("#signup").slideDown(speed);},speed);
 	setTimeout(function(){$("#signin").slideDown(speed);},speed);
-  // $("body").fadeTo(speed,0.7);
-};
-function hideLoginBox(){
-	$("#login_box").slideUp(speed);
-	$("#back").fadeTo(speed,1);
-};
-function hideRegister(){
-	$("#signup_form").slideUp(speed);
-	$("#back").fadeTo(speed,1);
+  $("back").fadeTo(speed,0.7);
 };
 $(document).ready(function() {
 	console.log('ready')

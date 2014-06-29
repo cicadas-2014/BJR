@@ -47,3 +47,4 @@ describe 'Rounds', :js => true do
       pending
     end
   end
+end
