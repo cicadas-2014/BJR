@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       end
     else
       @error = "Invalid login"
-      render :'users/index'
+      render :index
     end
   end
 
