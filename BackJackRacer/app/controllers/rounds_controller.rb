@@ -13,7 +13,9 @@ class RoundsController < ApplicationController
                     bet: @bets[n],
                     round_id: @round.id )
     end
-		redirect_to round_path(@round)
+    @round.set_winner
+    @round.set_payout
+    render :"rounds/show", :id => @round.id
 	end
 
 	def show

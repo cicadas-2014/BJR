@@ -4,7 +4,7 @@ describe RoundsController do
   describe 'post #create' do
     it "creates a new round" do
      expect{
-       post :create, user_id: 1
+       post :create, user_id: 1, bet_1: 1, bet_2: 1, bet_3: 1, bet_4: 1
        }.to change(Round,:count).by(1)
      end
 

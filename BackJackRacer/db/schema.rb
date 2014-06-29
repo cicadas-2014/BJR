@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140627144811) do
   create_table "rounds", force: true do |t|
     t.integer  "user_id"
     t.integer  "payout"
-    t.integer  "winner"
+    t.integer  "winner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
