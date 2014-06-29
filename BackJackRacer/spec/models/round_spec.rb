@@ -16,9 +16,10 @@ RSpec.describe Round, :type => :model do
   end
 
   context "has a set_winner method" do
-    it "looks at all of the round's racers' odds and sets the round's winner to a racer" do
+    it "looks at all of the round's racers' odds, sets the round's winner to a racer object, and returns the integer of the racer" do
       4.times { |n| Racer.create( odds: n+1, round: round) }
-      expect(round.set_winner).to be_a(Racer)
+      expect(round.set_winner).to be_a(Fixnum)
+      expect(round.winner).to be_a(Racer)
     end
   end
 
