@@ -78,4 +78,9 @@ describe 'Rounds', :js => true do
       expect(page).to have_text("Remaining funds:")
     end
   end
-end
+
+  describe 'Results page' do
+    it "has a link to rounds/new" do
+      pending
+    end
+  end

@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( racer.css racer.js racerAnimator.js )
