@@ -13,7 +13,7 @@ class RoundsController < ApplicationController
                     bet: @bets[n],
                     round_id: @round.id )
     end
-    @round.set_winner
+    @winner_number = @round.set_winner
     @round.set_payout
     render :"rounds/show", :id => @round.id
   end
