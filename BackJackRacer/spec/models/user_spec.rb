@@ -27,4 +27,10 @@ describe 'Users' do
       expect{User.create(username: username, password: password)}.to change(User, :count).by(0)
     end
   end
+
+  context "#apply_payout" do
+    it 'takes in Fixnum and adds it to funds' do
+      expect{user.apply_payout(-10)}.to change{user.funds}.by(-10)
+    end
+  end
 end

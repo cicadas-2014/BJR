@@ -1,0 +1,4 @@
+<h1>Racer <%=@round.winner.id %> won!</h1>
+<h2>Your payout is: <%= @round.payout %></h2>
+<h2>Remaining funds: <%= @round.user.funds %></h2>
+<%= link_to "New Round", :new_round %>

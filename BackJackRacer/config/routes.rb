@@ -8,7 +8,7 @@ post '/users', to: 'users#signin', as: 'signin'
 
 get '/logout', to: 'users#logout', as: 'logout'
 
-get '/rounds/:id/results', to: 'rounds#results'
+get '/rounds/:id/results', to: 'rounds#results', as: 'round_results'
 
 resources :rounds, only: [:new, :create, :show]
 
