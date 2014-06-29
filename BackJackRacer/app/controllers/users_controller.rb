@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
 
   def index
-    p '*'*100
-    p params
-    p '*'*100
     @error = params[:error]
     redirect_to new_round_path if session[:user_id]
   end
@@ -28,7 +25,7 @@ class UsersController < ApplicationController
       end
     else
       @error = "Invalid login"
-      redirect_to controller: 'users', action: 'index', error: "Invalid login"
+      render :'users/index'
     end
   end
 
