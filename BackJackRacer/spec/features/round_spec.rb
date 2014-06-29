@@ -10,15 +10,7 @@ describe 'Rounds', :js => true do
     click_button "Sign Up"
   end
 
-  describe 'Start round' do
-    it 'successfully start the game' do
-      visit new_round_path
-      click_button "Start round"
-      expect(page).to have_text("round")
-    end
-  end
-
-  describe 'Betting' do
+  describe 'Starting a round' do
     it 'can place bets if you have enough money' do
       visit new_round_path
       fill_in "bet_1", with: '1'
@@ -26,7 +18,7 @@ describe 'Rounds', :js => true do
       fill_in "bet_3", with: '3'
       fill_in "bet_4", with: '4'
       click_button "Start round"
-      expect(page).to have_text("round")
+      expect(current_path).to_not eq(new_round_path)
     end
     it "can't place bets if you don't have enough money" do
       visit new_round_path

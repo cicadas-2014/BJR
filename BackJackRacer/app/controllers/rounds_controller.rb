@@ -1,11 +1,11 @@
 class RoundsController < ApplicationController
-	include ApplicationHelper
+  include ApplicationHelper
 
-	def new
+  def new
 
-	end
+  end
 
-	def create
+  def create
     @round = Round.create( user: current_user )
     @bets = [params[:bet_1], params[:bet_2], params[:bet_3], params[:bet_4]]
     4.times do |n|
@@ -16,11 +16,11 @@ class RoundsController < ApplicationController
     @round.set_winner
     @round.set_payout
     render :"rounds/show", :id => @round.id
-	end
+  end
 
-	def show
+  def show
 
-	end
+  end
 
 
 end
