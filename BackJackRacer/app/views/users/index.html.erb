@@ -1,19 +1,15 @@
-<header>
-  <h1>Back Jack Racer</h1>
-</header>
-
 <div class='user_stuff'>
   <div id='signin'>
     <h3>Login</h3>
-    <% if @errors %>
-      <p class="error"><%= @error %></p>
-    <% end %>
     <%= form_tag(signin_path, method: "post") do %>
       <%= label_tag(:username, "Username") %>
       <%= text_field_tag(:username) %>
       <%= label_tag(:password, "Password") %>
       <%= text_field_tag(:password) %>
       <%= submit_tag("Login") %>
+    <% end %>
+    <% if @error %>
+      <p class="error"><%= @error %></p>
     <% end %>
   </div>
   <div id='signup'>
@@ -27,4 +23,3 @@
     <% end %>
   </div>
 </div>
-

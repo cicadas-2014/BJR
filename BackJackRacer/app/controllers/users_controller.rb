@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-
+    redirect_to new_round_path if session[:user_id]
   end
 
   def create
@@ -26,6 +26,15 @@ class UsersController < ApplicationController
       @error = "Invalid login"
       render :index
     end
+  end
+
+  def logout
+    session.clear
+    redirect_to root_path
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private

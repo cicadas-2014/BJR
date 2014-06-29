@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Rounds', :js => true do 
+describe 'Rounds', :js => true do
     let(:user){User.create(username:'username',password:'password')}
   before(:each) do
     #post signin_path, controller: "users", user: {username: 'username@username.com', password: 'password'}
@@ -26,7 +26,7 @@ describe 'Rounds', :js => true do
       click_button "Start round"
       expect(page).to have_text("round")
     end
-    it 'cant place bets, if you have docnent enough money' do
+    it "cant place bets, if you don't have enough money" do
       visit new_round_path
       fill_in "bet_1", with: '200'
       fill_in "bet_2", with: '300'
