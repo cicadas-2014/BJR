@@ -14,7 +14,6 @@ function hideRegister(){
 	$("#back").fadeTo(speed,1);
 };
 $(document).ready(function() {
-	// $('#login_box').hide()
 	console.log('ready')
 	console.log($('.error').text())
 	if($('.error').text()!="Invalid login"){
