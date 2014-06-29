@@ -7,7 +7,5 @@
     <%= password_field_tag(:password) %>
     <%= submit_tag("Login") %>
   <% end %>
-  <% if @error %>
-    <p class="error"><%= @error %></p>
-  <% end %>
+  <p class="error"><%= @error if @error%></p>
 </div>
