@@ -5,10 +5,12 @@ class Round < ActiveRecord::Base
 
   def set_winner
     racers = []
-    self.racers.each do |racer|
-      racer.odds.times { |n| racers << racer }
+    self.racers.each_with_index do |racer, index|
+      racer.odds.times { |n| racers << [racer,index+1] }
     end
-    self.winner = racers.sample
+    winner = racers.sample
+    self.winner = winner[0]
+    return winner[1]
   end
 
   def set_payout
