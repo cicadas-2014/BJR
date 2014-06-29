@@ -1,0 +1,10 @@
+<div id='signup'>
+ 	<h3>Sign Up</h3>
+ 		<%= form_for User.new, url: new_path do |f| %>
+ 		<%= f.label "Username" %>
+ 		<%= f.text_field :username, id: "signup_username" %>
+ 		<%= f.label "Password" %>
+ 		<%= f.password_field :password, id: "signup_password"%>
+ 		<%= f.submit "Sign Up" %>
+ 	<% end %>
+</div>

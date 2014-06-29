@@ -8,12 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <h1>Back Jack Racer</h1>
-    <% if session[:user_id] %>
-      <%= link_to "Logout", :logout, { :id => "logout" } %>
-    <% end %>
-  </nav>
 
   <%= yield %>
 
