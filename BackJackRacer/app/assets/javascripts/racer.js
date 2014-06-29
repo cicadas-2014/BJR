@@ -11,7 +11,7 @@
         this.raceAnimator = new RaceAnimator(path);
         this.racer = racer;
         this.speed = 0.1;
-        this.color = '#0000FF'; // visually separate different racers easily
+        this.color = '#00FFFF'; // visually separate different racers easily
     }
 
     AnimateRacer.prototype = {
@@ -37,6 +37,12 @@
                         racers[2].raceAnimator.speed -= .0001;
                         racers[3].raceAnimator.speed -= .0002;
                         racers[4].raceAnimator.speed += .0002;
+                    }else{
+                        this.raceAnimator.speed += .000;
+                        racers[1].raceAnimator.speed += .0001;
+                        racers[2].raceAnimator.speed -= .0001;
+                        racers[3].raceAnimator.speed -= .0002;
+                        racers[4].raceAnimator.speed += .0003;
                     }
                 }
             }

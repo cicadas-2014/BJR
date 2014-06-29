@@ -2,44 +2,7 @@ body {
   background-image: url('/finishline.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 5%;
-}
-
-#user_login header {
-  background-color: black;
-  height: 15%;
-  display: fixed;
-  top: 20px;
-}
-
-
-
-#user_login #logout {
- color: white;
- float: right;
- text-decoration: none;
- margin-top: 25px;
-}
-
-#user_login {
-  border: 2px black solid;
-  width: 350px;
-  margin: 150px auto;
-  background-color: white;
-}
-
-#user_login  div {
-  display: inline-block;
-  width: 43%;
-  margin: 10px;
-  height: 209px;
-}
-#user_login .error {
-  margin: 0;
-  padding: 0;
-}
-#user_login  div:first-child {
-  border-right: 2px black solid;
+  margin-top: 70px;
 }
 
 .error {
@@ -51,9 +14,58 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  height: 70px;
 }
 nav h1 {
   color: white;
   display: inline-block;
-  width: 20%;
+  /*width: %;*/
+}
+#logout {
+ color: white;
+ float: right;
+ text-decoration: none;
+ margin-top: 25px;
+}
+#login_box {
+  position: fixed;
+  top:100px;
+  left:50%;
+  margin-left: -200px;
+  width: 400px;
+  height: 200px;
+  border: 2px black solid;
+  background-color: white;
+}
+
+#login_box input {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#login_box div {
+  /*display: inline-block;*/
+  width: 175px;
+  padding: 10px;
+  text-align: center;
+  margin: 10px 0;
+  /*height: 209px;*/
+  height: 160px;
+}
+#login_box h3 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+#login_box  div:first-child {
+  border-right: 2px black solid;
+  float: left;
+}
+#login_box  div:nth-child(2) {
+  /*border: 2px red solid;*/
+  float: right;
+}
+#login_box .error {
+  margin: 0;
+  padding: 0;
 }
