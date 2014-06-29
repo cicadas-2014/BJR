@@ -41,4 +41,9 @@ describe 'Rounds', :js => true do
       it 'displays a button to go to the results page'
     end
   end
-end
+
+  describe 'Results page' do
+    it "has a link to rounds/new" do
+      pending
+    end
+  end
