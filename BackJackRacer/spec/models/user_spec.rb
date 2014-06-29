@@ -6,11 +6,11 @@ describe 'Users' do
   let(:user){ create :user }
 
   it 'has a username' do
-    expect(user.username).to_not eq(nil)
+    expect(user).to respond_to(:username)
   end
 
-  it 'has a password_digest' do
-    expect(user.password_digest).to_not eq(nil)
+  it 'properly sets the password_digest' do
+    expect(user.password_digest).to_not be_nil
   end
 
   context "doesn't validate" do

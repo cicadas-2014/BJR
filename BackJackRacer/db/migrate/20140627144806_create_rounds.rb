@@ -3,6 +3,7 @@ class CreateRounds < ActiveRecord::Migration
     create_table :rounds do |t|
       t.belongs_to :user
       t.integer :payout
+      t.integer :winner
       t.timestamps
     end
   end

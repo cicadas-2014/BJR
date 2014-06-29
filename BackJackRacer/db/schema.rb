@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20140627144811) do
   enable_extension "plpgsql"
 
   create_table "racers", force: true do |t|
-    t.integer  "max_steps"
     t.integer  "odds"
     t.integer  "bet"
     t.integer  "round_id"
@@ -27,6 +26,8 @@ ActiveRecord::Schema.define(version: 20140627144811) do
 
   create_table "rounds", force: true do |t|
     t.integer  "user_id"
+    t.integer  "payout"
+    t.integer  "winner"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
