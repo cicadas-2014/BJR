@@ -30,8 +30,6 @@ describe RoundsController do
   describe 'post #results' do
     let!(:round) { create :round }
     let(:racer1) { Racer.create()}
-    it "has a link to rounds/new" do
-      pending
-    end
+
   end
 end
