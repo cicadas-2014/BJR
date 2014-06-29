@@ -14,6 +14,13 @@ class Round < ActiveRecord::Base
   end
 
   def set_payout
-    self.payout = self.winner.bet * self.winner.odds + self.winner.bet
+    payout = self.winner.bet * self.winner.odds + self.winner.bet
+    self.racers.each do |racer|
+      unless racer == self.winner
+        payout -= racer.bet
+      end
+    end
+    self.update_attributes(payout: payout)
+    payout
   end
 end

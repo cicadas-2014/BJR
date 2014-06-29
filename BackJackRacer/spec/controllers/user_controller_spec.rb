@@ -36,10 +36,10 @@ describe UsersController do
         post :signin, username: "aw4t", password: "aw3yh"
         expect(assigns(:error)).to_not be_nil
       end
-      it "renders the index" do
+      it "redirects to index" do
         expect(
           post :signin, username: "aw4t", password: "aw3yh"
-          ).to render_template :index
+          ).to render_template :'users/index'
       end
     end
   end

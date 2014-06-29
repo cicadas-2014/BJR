@@ -22,7 +22,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to new_round_path
     else
-      redirect_to controller: 'users', action: 'index', error: "Invalid login"
+      @error = "Invalid login"
+      render :index
     end
   end
 
