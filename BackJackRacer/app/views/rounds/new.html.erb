@@ -1,9 +1,9 @@
 <p>Your current balance is: <span id='balance'><%= current_user.funds %></span></p>
 <%= form_tag(rounds_path, method: "post") do %>
-  <%= text_field_tag(:bet_1) %>
-  <%= text_field_tag(:bet_2) %>
-  <%= text_field_tag(:bet_3) %>
-  <%= text_field_tag(:bet_4) %>
-  <%= submit_tag("Start round") %>
+<%= text_field_tag(:bet_1) %>
+<%= text_field_tag(:bet_2) %>
+<%= text_field_tag(:bet_3) %>
+<%= text_field_tag(:bet_4) %>
+<%= submit_tag("Start round") %>
 <% end %>
-  <p class="error" id="bet_error"></p>
+<p class="error" id="bet_error"></p>

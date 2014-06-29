@@ -23,7 +23,7 @@ $(document).ready(function() {
 		if(parseInt($('#balance').text()) < bet){
 		$('#bet_error').text("You cant bet that much :(")
 			$('input[name="commit"]').attr("disabled", true);
-		}else{
+		} else{
 			$('#bet_error').text("")
 			$('input[name="commit"]').attr("disabled", false);
 		}

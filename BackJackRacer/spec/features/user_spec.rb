@@ -4,7 +4,7 @@ describe 'Users' do
   let(:user) { create :user }
   describe 'User can create a new account' do
     it 'by filling out the sign up form' do
-      visit index_path
+      visit root_path
       fill_in "signup_username", with: 'username'
       fill_in "signup_password", with: 'password!!!'
       click_button "Sign Up"
@@ -16,7 +16,7 @@ describe 'Users' do
     let(:admin) { User.create( username: "admin", password: "password") }
     context "with valid information" do
       it "redirects to the start round page" do
-        visit index_path
+        visit root_path
         fill_in "username", with: admin.username
         fill_in "password", with: admin.password
         click_button "Login"
@@ -25,7 +25,7 @@ describe 'Users' do
     end
     context "with invalid information" do
       it "displays errors" do
-        visit index_path
+        visit root_path
         fill_in "username", with: "bad"
         fill_in "password", with: "wrong"
         click_button "Login"
@@ -38,7 +38,7 @@ describe 'Users' do
     let(:admin) { User.create( username: "admin", password: "password") }
     context "clicks Logout link" do
       it "redirects to the login page" do
-        visit index_path
+        visit root_path
         fill_in "username", with: admin.username
         fill_in "password", with: admin.password
         click_button "Login"

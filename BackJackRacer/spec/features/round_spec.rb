@@ -4,7 +4,7 @@ describe 'Rounds', :js => true do
     let(:user){User.create(username:'username',password:'password')}
   before(:each) do
     #post signin_path, controller: "users", user: {username: 'username@username.com', password: 'password'}
-    visit index_path
+    visit root_path
     fill_in "signup_username", with: 'username'
     fill_in "signup_password", with: 'password!!!'
     click_button "Sign Up"
