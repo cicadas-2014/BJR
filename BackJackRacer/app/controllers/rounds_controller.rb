@@ -14,7 +14,7 @@ class RoundsController < ApplicationController
              params[:bet_4].to_i||0 ]
     @odds = [ params[:odds1],
               params[:odds2],
-              params[:odds3]
+              params[:odds3],
               params[:odds4] ]
     4.times do |n|
       Racer.create( odds: @odds(n),
