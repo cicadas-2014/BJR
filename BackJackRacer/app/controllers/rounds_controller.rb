@@ -2,17 +2,22 @@ class RoundsController < ApplicationController
   include ApplicationHelper
 
   def new
-    @odds = [rand(1..5),rand(1..5),rand(1..5),rand(1..5)]
+    @odds = [rand(1..10),rand(1..10),rand(1..10),rand(1..10)]
   end
 
   def create
+    raise params.inspect
     @round = Round.create( user: current_user )
     @bets = [ params[:bet_1].to_i||0,
              params[:bet_2].to_i||0,
              params[:bet_3].to_i||0,
              params[:bet_4].to_i||0 ]
+    @odds = [ params[:odds1],
+              params[:odds2],
+              params[:odds3]
+              params[:odds4] ]
     4.times do |n|
-      Racer.create( odds: rand(1..5),
+      Racer.create( odds: @odds(n),
                     bet: @bets[n],
                     round_id: @round.id )
     end
