@@ -37,17 +37,17 @@
               if (a.raceAnimator.percent < b.raceAnimator.percent) return 1;
               return 0;
             });
-            if (this.raceAnimator.percent > 50) {
+            if (this.raceAnimator.percent > 10) {
               if (racers[0].id != this.id) {
-                this.raceAnimator.speed += .0006;
+                this.raceAnimator.speed += .0004;
                 racers[1].raceAnimator.speed -= .0001;
                 racers[2].raceAnimator.speed -= .0001;
                 racers[3].raceAnimator.speed += .0002;
               }else{
-                this.raceAnimator.speed -= .0003;
+                this.raceAnimator.speed -= .000;
                 racers[1].raceAnimator.speed -= .0001;
                 racers[2].raceAnimator.speed += .0001;
-                racers[3].raceAnimator.speed += .0003;
+                racers[3].raceAnimator.speed += .0002;
               }
             }
           }
@@ -64,11 +64,11 @@
           if(!(finishExecuted)){
             finishExecuted = true
               var speed = 1200;
-              $("#back").css("background-color",winner_color)
+              $(".back").css("background-color",winner_color)
               $("#logout").css("color","red")
             setTimeout(function(){
               $('.walker').fadeTo(speed*2,0);
-              $("#back").fadeTo(speed*2,0.7);
+              $(".back").fadeTo(speed*2,0.7);
               $('#svgPath').fadeTo(speed*2, 0);
               setTimeout(function(){$('#round #winner-box').slideDown(speed*3)},speed*2);
             },speed*3);

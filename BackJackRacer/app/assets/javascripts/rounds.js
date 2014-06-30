@@ -7,13 +7,29 @@ function test_bets(){
 $(document).ready(function() {
 	var speed = 1200;
 
+	
+	$('.back').hide();
+	$('#statsback').hide();
+	$('#newsback').hide();
+
 	$('#round #winner-box').hide();
-	$('#back').hide();
-	$('#stats #back').hide();
 	$('#stats').hide();
-	// $("#back").css("backgorund-color",winner_color)
-	$("#stats #back").fadeTo(speed,0.7);
+	$('#bet').hide();
+
+  $("#statsback").css("z-index",1)  
+  $("#newback").css("z-index",-1)
+
+  $("#stats").css("z-index",2)
+  $("#bet *").css("z-index",2)
+
+	$("#statsback").fadeTo(speed, 0.8);
+	$("#newback").fadeTo(speed, 0.8);
+	// $("#stats").
 	setTimeout(function(){$('#stats').slideDown(speed)},speed);
+	setTimeout(function(){$('#bet').slideDown(speed)},speed);
+
+
+
 
 	$("body").keyup(function() {
 		$("#payout1").text("0")

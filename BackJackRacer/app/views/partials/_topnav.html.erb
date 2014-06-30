@@ -1,6 +1,9 @@
 <nav>
-	<h1>Back Jack Racer</h1>
+
 	<% if session[:user_id] %>
-	<%= link_to "Logout", :logout, { :id => "logout" } %>
+	<h1><%= link_to "Back Jack Racer", new_round_path %></h1>
+	<h3 ><%= link_to "Logout", :logout, { :id => "logout" } %> </h3>
+	<% else %>
+	<h1>Back Jack Racer</h1>
 	<% end %>
 </nav>
