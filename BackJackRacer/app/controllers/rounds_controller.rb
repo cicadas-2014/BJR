@@ -2,6 +2,7 @@ class RoundsController < ApplicationController
   include ApplicationHelper
 
   def new
+    @odds = [rand(1..5),rand(1..5),rand(1..5),rand(1..5)]
   end
 
   def create

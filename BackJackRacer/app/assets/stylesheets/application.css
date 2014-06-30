@@ -79,13 +79,39 @@ nav h1 {
 #bet {
   width: 200px;
   margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  border: double #00FFFF 10px;
+  border-radius: 35px;
 }
 
-#bet input {
+#bet input[type='text'] {
   margin: 7px auto;
-  width: 50%;
+  width: 80%;
+  display: block;
   border:none;
-  float: right;
+  border-radius: 5px;
+  color: #00FFFF;
+  text-align: center;
+}
+
+#bet input[type='submit'] {
+  margin: 7px auto;
+  width: 80%;
+  height: 30px;
+  display: block;
+  border:none;
+  border-radius: 5px;
+  color: #00FFFF;
+  text-align: center;
+  border:grey double 5px;
+  border-radius: 40px;
+}
+#bet input[type='submit']:hover {
+  border:red double 5px;
+  color: red;
+
 }
 
 #bet .red {
@@ -103,7 +129,10 @@ nav h1 {
 #bet .blue {
   background-color: blue;
 } 
-
+#bet .error {
+  color: red;
+  font-weight: bold;
+}
 
 
 

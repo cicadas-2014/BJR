@@ -2,16 +2,23 @@
  Page Configuration
  -----------------------------------------------------------*/
  (function () {
-  var path = "M757.2,499.5H293.8C166.3,499.5,62,395.2,62,267.8l0,0C62,140.3,166.3,36,293.8,36h463.5C884.7,36,989,140.3,989,267.8l0,0C989,395.2,884.7,499.5,757.2,499.5z"
+  var path = "M712.3,439.4H108.6c-6.6,0-12-5.4-12-12V138.1c0-6.6,5.4-12,12-12h603.8c6.6,0,12,5.4,12,12v289.3C724.3,434,718.9,439.4,712.3,439.4z"
+
+
 
   firstRacer = $('.maze > .walker')[0],
   racers = [];
-
+  var winner = $('#winner').val()
+  var colors = ["red","green","yellow","blue"]
+  var winner_color = "red"
+  for (var i = 0; i < colors.length; i++) {
+    if(i===parseInt(winner)-1){winner_color = colors[i];delete colors[i]}
+  };
   function AnimateRacer(racer) {
     this.raceAnimator = new RaceAnimator(path);
     this.racer = racer;
     this.speed = 0.1;
-        this.color = '#00FFFF'; // visually separate different racers easily
+        this.color = winner_color; // visually separate different racers easily
       }
 
       AnimateRacer.prototype = {
@@ -35,14 +42,12 @@
                 this.raceAnimator.speed += .001;
                 racers[1].raceAnimator.speed += .0001;
                 racers[2].raceAnimator.speed -= .0001;
-                racers[3].raceAnimator.speed -= .0002;
-                racers[4].raceAnimator.speed += .0002;
+                racers[3].raceAnimator.speed += .0002;
               }else{
                 this.raceAnimator.speed += .000;
                 racers[1].raceAnimator.speed += .0001;
-                racers[2].raceAnimator.speed -= .0001;
-                racers[3].raceAnimator.speed -= .0002;
-                racers[4].raceAnimator.speed += .0003;
+                racers[2].raceAnimator.speed += .0001;
+                racers[3].raceAnimator.speed += .0002;
               }
             }
           }
@@ -80,10 +85,9 @@
 
       generateRacer(firstRacer).start();
 
-      addRacer('#FF0000');
-      addRacer('#FF0000');
-      addRacer('#FF0000');
-      addRacer('#FF0000');
+      addRacer(colors[0]);
+      addRacer(colors[1]);
+      addRacer(colors[2]);
 
       $('#svgPath').toggleClass('show');
     })

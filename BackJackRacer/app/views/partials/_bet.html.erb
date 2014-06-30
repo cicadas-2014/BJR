@@ -1,14 +1,23 @@
-<script>var balance = <%= current_user.funds.to_i %></script>
+<script>
+var balance = <%= current_user.funds.to_i %>
+var randomNumbers = <%=@odds%>
+</script>
 <p>Your current balance is: <span id='balance'><%= current_user.funds %></span></p>
 <%= form_tag(rounds_path, method: "post") do %>
-	<%= text_field_tag(:bet_1, nil, class:'red')%>
 	<%= label_tag(:red,nil,class:'red-text')%>
-	<%= text_field_tag(:bet_1, nil, class:'green')%>
+	<%= text_field_tag(:bet_1, nil, class:'red')%>
+	Odds: <%= @odds[0] %>:1 Payout:<span id='payout1'>0</span><br><br>
 	<%= label_tag(:green,nil,class:'green-text')%>
-	<%= text_field_tag(:bet_1, nil, class:'yellow')%>
+	<%= text_field_tag(:bet_2, nil, class:'green')%>
+	Odds: <%= @odds[1] %>:1 Payout:<span id='payout2'>0</span><br><br>
 	<%= label_tag(:yellow,nil,class:'yellow-text')%>
-	<%= text_field_tag(:bet_1, nil, class:'blue')%>
+	<%= text_field_tag(:bet_3, nil, class:'yellow')%>
+	Odds: <%= @odds[2] %>:1 Payout:<span id='payout3'>0</span><br><br>
 	<%= label_tag(:blue,nil,class:'blue-text')%>
+	<%= text_field_tag(:bet_4, nil, class:'blue')%>
+	Odds: <%= @odds[3] %>:1 Payout:<span id='payout4'>0</span><br><br>
 	<%= submit_tag("Start round") %>
 <% end %>
-<p class="error" id="bet_error"></p>
+<p class="error" id="bet_error"></Odds: p>
+
+bet * odds + bet

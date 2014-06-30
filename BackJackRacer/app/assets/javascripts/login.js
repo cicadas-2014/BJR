@@ -6,8 +6,6 @@ function showLoginBox(){
   $("back").fadeTo(speed,0.7);
 };
 $(document).ready(function() {
-	console.log('ready')
-	console.log($('.error').text())
 	if($('.error').text()!="Invalid login"){
 		$("#login_box").hide();
 		$("#signup").hide();

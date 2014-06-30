@@ -1,13 +1,21 @@
 <%= render "partials/topnav" %>
-
-<h1>The winner is racer <%= @winner_number %>!!!</h1>
+<%= hidden_field_tag 'winner', '', value: @winner_number %>
 
 <%= stylesheet_link_tag("racer") %>
+<%=javascript_include_tag "racerAnimator.js" %>
+<%=javascript_include_tag "racer.js" %>
+<!-- <div id="round"> -->
+	
 
 <div class='maze'>
     <div class='walker'>&#9654;</div>
     <div id='svgPath'><%= image_tag("path.svg", size: "800x800")%></div>
 </div>
 
-<%=javascript_include_tag "racerAnimator.js" %>
-<%=javascript_include_tag "racer.js" %>
+
+<div id="winner">
+	<h1><%=  %></h1>
+
+</div>
+
+<!-- </div> -->
