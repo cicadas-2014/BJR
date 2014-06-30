@@ -28,7 +28,7 @@ class RoundsController < ApplicationController
     @winner_number = @round.set_winner
     @round.set_payout
     if @round.user
-      @round.user.funds += @round.payout
+      @round.user.funds = @round.user.funds + @round.payout
       @round.user.save
     end
     @round.save
