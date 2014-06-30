@@ -4,19 +4,19 @@ describe RoundsController do
   describe 'post #create' do
     it "creates a new round and sets it to round" do
       expect{
-       post :create, user_id: 1, bet_1: 1, bet_2: 1, bet_3: 1, bet_4: 1
+       post :create, user_id: 1, bet_1: 1, bet_2: 1, bet_3: 1, bet_4: 1, odd_1: 1, odd_2: 1, odd_3: 1, odd_4: 1
        }.to change(Round,:count).by(1)
        expect(assigns(:round)).to_not be_nil
      end
 
      it "creates 4 new racers" do
       expect{
-       post :create, user_id: 1, bet_1: 1, bet_2: 1, bet_3: 1, bet_4: 1
+       post :create, user_id: 1, bet_1: 1, bet_2: 1, bet_3: 1, bet_4: 1,odd_1: 1, odd_2: 1, odd_3: 1, odd_4: 1
        }.to change(Racer,:count).by(4)
      end
 
      it "redirects to #show" do
-      post :create, user_id: 1, bet_1: 1, bet_2: 1, bet_3: 1, bet_4: 1
+      post :create, user_id: 1, bet_1: 1, bet_2: 1, bet_3: 1, bet_4: 1, odd_1: 1, odd_2: 1, odd_3: 1, odd_4: 1
       expect(response).to redirect_to(round_path(assigns(:round).id))
     end
   end

@@ -6,18 +6,17 @@ class RoundsController < ApplicationController
   end
 
   def create
-    raise params.inspect
     @round = Round.create( user: current_user )
     @bets = [ params[:bet_1].to_i||0,
              params[:bet_2].to_i||0,
              params[:bet_3].to_i||0,
              params[:bet_4].to_i||0 ]
-    @odds = [ params[:odds1],
-              params[:odds2],
-              params[:odds3],
-              params[:odds4] ]
+    @odds = [ params[:odds_1],
+              params[:odds_2],
+              params[:odds_3],
+              params[:odds_4] ]
     4.times do |n|
-      Racer.create( odds: @odds(n),
+      Racer.create( odds: @odds[n],
                     bet: @bets[n],
                     round_id: @round.id )
     end

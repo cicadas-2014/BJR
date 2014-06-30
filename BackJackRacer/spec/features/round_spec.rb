@@ -78,10 +78,4 @@ describe 'Rounds' do
       expect(page).to have_text("Remaining funds:")
     end
   end
-
-  describe 'Results page' do
-    it "has a link to rounds/new" do
-      pending
-    end
-  end
 end
