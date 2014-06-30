@@ -6,7 +6,7 @@ class Round < ActiveRecord::Base
   def set_winner
     racers = []
     self.racers.each_with_index do |racer, index|
-      racer.odds.times { |n| racers << [racer,index+1] }
+      racers << [racer,index+1] if rand(1..10)/racer.odds >= 1
     end
     winner = racers.sample
     self.winner = winner[0]
