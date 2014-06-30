@@ -28,11 +28,23 @@ class RoundsController < ApplicationController
       @round.user.save
     end
     @round.save
+    case @winner_number
+    when 1 then @winner_color = "red"
+    when 2 then @winner_color = "green"
+    when 3 then @winner_color = "yellow"
+    when 4 then @winner_color = "blue"
+    end
     render :"rounds/show", :id => @round.id
   end
 
   def results
     @round = Round.find(params[:id])
     @user = @round.user
+    @payout = space(@round.payout)
+    @funds = space(@round.user.funds)
+  end
+
+  def space(number)
+   number.to_s.gsub(/\D/, '').reverse.gsub(/.{3}/, '\0 ').reverse
   end
 end

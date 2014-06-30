@@ -2,20 +2,15 @@
 <%= hidden_field_tag 'winner', '', value: @winner_number %>
 
 <%= stylesheet_link_tag("racer") %>
-<%=javascript_include_tag "racerAnimator.js" %>
-<%=javascript_include_tag "racer.js" %>
-<!-- <div id="round"> -->
-	
-
-<div class='maze'>
-    <div class='walker'>&#9654;</div>
-    <div id='svgPath'><%= image_tag("path.svg", size: "800x800")%></div>
+<div id="round">
+	<div class='maze'>
+		<div class='walker'>&#9654;</div>
+		<div id='svgPath'><%= image_tag("path.svg", size: "800x800")%></div>
+	</div>
+	<%=javascript_include_tag "racerAnimator.js" %>
+	<%=javascript_include_tag "racer.js" %>
+	<div id="winner-box">
+		<h2 class="<%= @winner_color%>"> <%= @winner_color.capitalize%> have won!</h2>
+		<%= link_to "Get Reward!", round_results_path, :class => "button"  %>
+	</div>
 </div>
-
-
-<div id="winner">
-	<h1><%=  %></h1>
-
-</div>
-
-<!-- </div> -->

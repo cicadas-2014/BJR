@@ -5,6 +5,16 @@ function test_bets(){
 	bet =+ $('#bet_4').val();
 }
 $(document).ready(function() {
+	var speed = 1200;
+
+	$('#round #winner-box').hide();
+	$('#back').hide();
+	$('#stats #back').hide();
+	$('#stats').hide();
+	// $("#back").css("backgorund-color",winner_color)
+	$("#stats #back").fadeTo(speed,0.7);
+	setTimeout(function(){$('#stats').slideDown(speed)},speed);
+
 	$("body").keyup(function() {
 		$("#payout1").text("0")
 		$("#payout2").text("0")
@@ -29,11 +39,11 @@ $(document).ready(function() {
 		}
 		$('#balance').text(String(balance -bet))
 		if(balance < bet){
-		$('#bet_error').text("You cant bet that much :(")
-			$('input[name="commit"]').attr("disabled", true);
-		} else{
-			$('#bet_error').text("")
-			$('input[name="commit"]').attr("disabled", false);
-		}
-	});
+			$('#bet_error').text("You cant bet that much :(")
+				$('input[name="commit"]').attr("disabled", true);
+			} else{
+				$('#bet_error').text("")
+				$('input[name="commit"]').attr("disabled", false);
+			}
+		});
 });

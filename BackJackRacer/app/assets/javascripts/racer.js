@@ -2,10 +2,9 @@
  Page Configuration
  -----------------------------------------------------------*/
  (function () {
+  var finishExecuted = false;
+
   var path = "M712.3,439.4H108.6c-6.6,0-12-5.4-12-12V138.1c0-6.6,5.4-12,12-12h603.8c6.6,0,12,5.4,12,12v289.3C724.3,434,718.9,439.4,712.3,439.4z"
-
-
-
   firstRacer = $('.maze > .walker')[0],
   racers = [];
   var winner = $('#winner').val()
@@ -14,6 +13,7 @@
   for (var i = 0; i < colors.length; i++) {
     if(i===parseInt(winner)-1){winner_color = colors[i];delete colors[i]}
   };
+  console.log(winner_color)
   function AnimateRacer(racer) {
     this.raceAnimator = new RaceAnimator(path);
     this.racer = racer;
@@ -39,15 +39,15 @@
             });
             if (this.raceAnimator.percent > 50) {
               if (racers[0].id != this.id) {
-                this.raceAnimator.speed += .001;
-                racers[1].raceAnimator.speed += .0001;
+                this.raceAnimator.speed += .0006;
+                racers[1].raceAnimator.speed -= .0001;
                 racers[2].raceAnimator.speed -= .0001;
                 racers[3].raceAnimator.speed += .0002;
               }else{
-                this.raceAnimator.speed += .000;
-                racers[1].raceAnimator.speed += .0001;
+                this.raceAnimator.speed -= .0003;
+                racers[1].raceAnimator.speed -= .0001;
                 racers[2].raceAnimator.speed += .0001;
-                racers[3].raceAnimator.speed += .0002;
+                racers[3].raceAnimator.speed += .0003;
               }
             }
           }
@@ -61,10 +61,20 @@
         },
 
         finish: function () {
-
+          if(!(finishExecuted)){
+            finishExecuted = true
+              var speed = 1200;
+              $("#back").css("background-color",winner_color)
+              $("#logout").css("color","red")
+            setTimeout(function(){
+              $('.walker').fadeTo(speed*2,0);
+              $("#back").fadeTo(speed*2,0.7);
+              $('#svgPath').fadeTo(speed*2, 0);
+              setTimeout(function(){$('#round #winner-box').slideDown(speed*3)},speed*2);
+            },speed*3);
+          }
         }
       }
-      ;
 
       function generateRacer(domElement) {
         var racer = new AnimateRacer(domElement);
