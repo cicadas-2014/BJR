@@ -17,7 +17,7 @@ html {
     position: absolute;
     z-index: 1;
     font-size: 25px;
-    color: deeppink;
+    color: blue;
     height: 25px;
     width: 25px;
     text-align: center;
@@ -35,4 +35,60 @@ html {
 
 #svgPath.show {
     opacity: 1;
+}
+
+#round {
+  position: fixed;
+  margin-top: -25px;
+  left:50%;
+  margin-left: -400px;
+}
+#round #winner-box {
+  border: groove 10px red;
+  border-radius: 25px;
+  text-align: center;
+
+  position: fixed;
+  top: 100px;
+  left:50%;
+  margin-left: -250px;
+  width: 500px;
+
+  z-index: 3;
+  background-color: grey;
+  font-size: 30px;
+}
+
+#round #winner-box a{
+  margin: 7px auto;
+  width: 80%;
+  height: 30px;
+  display: block;
+  border:none;
+  border-radius: 5px;
+  color: #00FFFF;
+  text-align: center;
+  border:#00FFFF double 5px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 50px;
+  height: 60px;
+}
+#round #winner-box a:hover{
+  border:red double 5px;
+  color: red;
+}
+
+#round .yellow {
+    color:yellow;
+}
+#round .red {
+    color:red;
+}
+#round .green {
+    color:green;
+}
+#round .blue {
+    color:blue;
 }

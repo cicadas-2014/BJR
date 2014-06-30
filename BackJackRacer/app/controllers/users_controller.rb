@@ -18,11 +18,9 @@ class UsersController < ApplicationController
 
   def signin
     @user = User.find_by(username: params[:username])
-    if @user
-      if @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-        redirect_to new_round_path
-      end
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to new_round_path
     else
       @error = "Invalid login"
       render :index
