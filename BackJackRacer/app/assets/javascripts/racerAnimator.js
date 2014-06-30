@@ -36,7 +36,7 @@ RaceAnimator.prototype = {
             angle = Math.atan2(points.ahead.y - points.behind.y, points.ahead.x - points.behind.x) * 180 / Math.PI;
 
             racer.percent = percent + speed;
-            racer.timer = setTimeout(calc, 15);
+            racer.timer = setTimeout(calc, 30);
 
             step.call(racer.context, racer.pointAt(percent), angle);
         })();
