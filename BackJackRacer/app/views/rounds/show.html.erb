@@ -10,7 +10,7 @@
 	<%=javascript_include_tag "racerAnimator.js" %>
 	<%=javascript_include_tag "racer.js" %>
 	<div id="winner-box">
-		<h2 class="<%= @winner_color%>"> <%= @winner_color.capitalize%> have won!</h2>
+		<h2 class="<%= @winner_color%>"> <%= @winner_color.capitalize%> has won!</h2>
 		<%= link_to "Get Reward!", round_results_path, :class => "button"  %>
 	</div>
 </div>

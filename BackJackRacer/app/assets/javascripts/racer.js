@@ -4,7 +4,7 @@
  (function () {
   var finishExecuted = false;
 
-  var path = "M712.3,439.4H108.6c-6.6,0-12-5.4-12-12V138.1c0-6.6,5.4-12,12-12h603.8c6.6,0,12,5.4,12,12v289.3C724.3,434,718.9,439.4,712.3,439.4z"
+  var path = "M436.7,380c0,0-69,71.1-92.9,35s-123.6,46.6-123.6,46.6s-130.6-57-98.7-80.9s-80.2-65.7-80.2-65.7s-24.4-143,22.1-134.5s15.4-93.7,15.4-93.7s100-84.1,107.2-40.4C193.3,90,295.4,5.1,295.4,5.1s110.4,28.4,82,67.2c-28.4,38.8,96.9,79.5,96.9,79.5s21.3,107.7-17,103.5S436.7,380,436.7,380z"
   firstRacer = $('.maze > .walker')[0],
   racers = [];
   var winner = $('#winner').val()
@@ -37,7 +37,7 @@
               if (a.raceAnimator.percent < b.raceAnimator.percent) return 1;
               return 0;
             });
-            if (this.raceAnimator.percent > 10) {
+            if (this.raceAnimator.percent > 50) {
               if (racers[0].id != this.id) {
                 this.raceAnimator.speed += .0004;
                 racers[1].raceAnimator.speed -= .0001;
