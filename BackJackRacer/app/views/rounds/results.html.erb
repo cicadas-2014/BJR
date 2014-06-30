@@ -1,5 +1,6 @@
+<div id="statsback"></div>
+<p id="hide">Racer <%=@round.winner.id %> won!</p>
 <div id="stats">
-	<div id="back"></div>
 	<h2>Your payout is: <span class="money"><%= @payout %></span></h2>
 	<h2>Remaining funds: <span class="money">	<%= @funds %></span></h2>
 	<%= link_to "New Round", :new_round %>
